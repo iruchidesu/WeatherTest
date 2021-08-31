@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    open-in-view: false
+    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      #  http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#configurations
+      hibernate:
+        format_sql: true
+  datasource:
+    # ImMemory
+    url: jdbc:h2:mem:weather
+    username: sa
+    password:
+
+  # Jackson Serialization Issue Resolver
+  jackson:
+    visibility:
+      field: any
+      getter: none
+      setter: none
+      is-getter: none
