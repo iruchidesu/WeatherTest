@@ -13,8 +13,8 @@ public class WeatherUtil {
     public static WeatherResponse getWeatherResponse(String weather) {
         weather = weather.replaceAll("(.{14})[.*?,]", "$1:");
         weather = weather.replace("[", "{");
-        weather = weather.replace("]","}");
-        Map<String, Double> map = JsonUtil.readValue(weather);
+        weather = weather.replace("]", "}");
+        Map<String, Double> map = JsonUtil.readValueMap(weather);
         return new WeatherResponse(map);
     }
 
